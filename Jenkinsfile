@@ -36,6 +36,9 @@ pipeline {
         }
 
         stage('Docker Build and Push') {
+            when {
+                    branch 'develop'    // trigger for develop branch
+            }
             steps {
                 script {
                     // Log in to DockerHub
