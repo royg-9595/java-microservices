@@ -13,7 +13,8 @@ pipeline {
         stage('Clone Git Repo') {
             steps {
                 script {
-                    git 'https://github.com/royg-9595/java-microservices.git'
+                    withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GITHUB_USER', passwordVariable: 'GITHUB_TOKEN')]) {
+                        sh 'git clone https://$GITHUB_USER:$GITHUB_TOKEN@github.com/your-github-repo.git'
                 }
             }
         }
