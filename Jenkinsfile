@@ -37,7 +37,9 @@ pipeline {
 
         stage('Docker Build and Push') {
             when {
-                branch 'develop' // Docker build and push only for the develop branch
+                anyOf {
+                    branch 'develop'    // trigger for develop branch
+                }
             }
             steps {
                 script {
