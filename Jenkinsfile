@@ -36,12 +36,6 @@ pipeline {
         }
 
         stage('Docker Build and Push') {
-            when {
-                anyOf {
-                    branch 'feature/*'  // trigger for feature branches
-                    branch 'develop'    // trigger for develop branch
-                }
-            }
             steps {
                 script {
                     // Log in to DockerHub
