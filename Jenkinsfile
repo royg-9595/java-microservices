@@ -22,8 +22,10 @@ pipeline {
 
         stage('Build and Test') {
             when {
-                branch 'feature/*'  // trigger for feature branches
-                branch 'develop'    // trigger for develop branch
+                anyOf {
+                    branch 'feature/*'  // trigger for feature branches
+                    branch 'develop'    // trigger for develop branch
+                }
             }
             steps {
                 script {
