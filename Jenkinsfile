@@ -14,8 +14,8 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GITHUB_USER', passwordVariable: 'GITHUB_TOKEN')]) {
-                        sh 'git clone https://$GITHUB_USER:$GITHUB_TOKEN@github.com/your-github-repo.git'
-                    }  // <-- This is the missing brace
+                        sh 'git clone https://$GITHUB_USER:$GITHUB_TOKEN@github.com/java-microservices.git.git'
+                    }
                 }
             }
         }
