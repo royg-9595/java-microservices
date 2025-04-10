@@ -38,6 +38,7 @@ pipeline {
         stage('Docker Build and Push') {
             when {
                 anyOf {
+                    branch 'feature/*'  // trigger for feature branches
                     branch 'develop'    // trigger for develop branch
                 }
             }
